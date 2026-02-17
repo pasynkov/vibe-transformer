@@ -93,11 +93,12 @@ curl http://localhost:3001/api/v1/issues/BR-9999
 
 ---
 
-### Iteration 1.3: Jira Mock API - Attachments Endpoint 🔄
+### Iteration 1.3: Jira Mock API - Attachments Endpoint ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 0.5 days
+**Completed**: 2026-02-17
+**Duration**: 0.5 days (actual: ~1 hour)
 **Goal**: Implement CSV file serving for attachments
 
 **Deliverables**:
@@ -140,16 +141,17 @@ curl http://localhost:3001/api/v1/attachments/att-002
 
 ---
 
-### Iteration 1.4: Transformator Mock API - Basic Setup ⏳
+### Iteration 1.4: Transformator Mock API - Basic Setup 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 0.5 days
 **Goal**: Create Transformator Mock API with health check
 
 **Deliverables**:
-- [ ] `mock-services/apps/transformator-mock/src/main.ts` - Entry point
-- [ ] `mock-services/apps/transformator-mock/src/app.module.ts` - Root module
-- [ ] `mock-services/apps/transformator-mock/src/health/health.controller.ts` - Health check
+- [x] `mock-services/apps/transformator-mock/src/main.ts` - Entry point
+- [x] `mock-services/apps/transformator-mock/src/app.module.ts` - Root module
+- [x] `mock-services/apps/transformator-mock/src/health/health.controller.ts` - Health check
 
 **Success Criteria**:
 ```bash
@@ -161,10 +163,10 @@ curl http://localhost:3002/api/health
 ```
 
 **Testing Checklist**:
-- [ ] Server starts on port 3002
-- [ ] Health endpoint returns 200 OK
-- [ ] Swagger docs accessible at `/api/docs`
-- [ ] Both servers run concurrently: `npm run start:dev`
+- [x] Server starts on port 3002
+- [x] Health endpoint returns 200 OK
+- [x] Swagger docs accessible at `/api/docs`
+- [x] Both servers run concurrently: `npm run start:dev`
 
 **Blocked By**: Iteration 1.1
 
