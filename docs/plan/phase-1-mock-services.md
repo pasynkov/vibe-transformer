@@ -8,11 +8,12 @@
 
 ## Iterations
 
-### Iteration 1.1: Jira Mock API - Basic Setup 🔄
+### Iteration 1.1: Jira Mock API - Basic Setup ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 0.5 days
+**Completed**: 2026-02-17
+**Duration**: 0.5 days (actual: ~1 hour)
 **Goal**: Create NestJS monorepo structure and basic Jira Mock API with health check
 
 **Deliverables**:
@@ -43,18 +44,19 @@ curl http://localhost:3001/api/health
 
 ---
 
-### Iteration 1.2: Jira Mock API - Issues Endpoint ⏳
+### Iteration 1.2: Jira Mock API - Issues Endpoint 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 1 day
 **Goal**: Implement GET /api/v1/issues/:ticketId endpoint with in-memory data
 
 **Deliverables**:
-- [ ] `issues/issues.controller.ts` - Issues controller
-- [ ] `issues/issues.service.ts` - Business logic
-- [ ] `issues/issues.module.ts` - Issues module
-- [ ] `issues/dto/issue.dto.ts` - Issue DTO with validation
-- [ ] `data/seed-data.ts` - Seed data for BR-1234, BR-1235, BR-1236
+- [x] `issues/issues.controller.ts` - Issues controller
+- [x] `issues/issues.service.ts` - Business logic
+- [x] `issues/issues.module.ts` - Issues module
+- [x] `issues/dto/issue.dto.ts` - Issue DTO with validation
+- [x] `data/seed-data.ts` - Seed data for BR-1234, BR-1235, BR-1236
 
 **Success Criteria**:
 ```bash
@@ -79,12 +81,12 @@ curl http://localhost:3001/api/v1/issues/BR-9999
 ```
 
 **Testing Checklist**:
-- [ ] GET /api/v1/issues/BR-1234 returns employee positions data
-- [ ] GET /api/v1/issues/BR-1235 returns department codes data
-- [ ] GET /api/v1/issues/BR-1236 returns teacher certifications data
-- [ ] Non-existent ID returns 404
-- [ ] Response matches JiraIssue DTO schema
-- [ ] Swagger docs show endpoint
+- [x] GET /api/v1/issues/BR-1234 returns employee positions data
+- [x] GET /api/v1/issues/BR-1235 returns department codes data
+- [x] GET /api/v1/issues/BR-1236 returns teacher certifications data
+- [x] Non-existent ID returns 404
+- [x] Response matches JiraIssue DTO schema
+- [x] Swagger docs show endpoint
 
 **Blocked By**: Iteration 1.1
 
