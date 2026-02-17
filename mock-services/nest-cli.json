@@ -15,7 +15,13 @@
       "entryFile": "main",
       "sourceRoot": "apps/jira-mock/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/jira-mock/tsconfig.app.json"
+        "tsConfigPath": "apps/jira-mock/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "../data/**/*.csv",
+            "outDir": "dist/apps/jira-mock"
+          }
+        ]
       }
     },
     "transformator-mock": {

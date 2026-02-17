@@ -44,11 +44,12 @@ curl http://localhost:3001/api/health
 
 ---
 
-### Iteration 1.2: Jira Mock API - Issues Endpoint 🔄
+### Iteration 1.2: Jira Mock API - Issues Endpoint ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 1 day
+**Completed**: 2026-02-17
+**Duration**: 1 day (actual: ~1 hour)
 **Goal**: Implement GET /api/v1/issues/:ticketId endpoint with in-memory data
 
 **Deliverables**:
@@ -92,18 +93,20 @@ curl http://localhost:3001/api/v1/issues/BR-9999
 
 ---
 
-### Iteration 1.3: Jira Mock API - Attachments Endpoint ⏳
+### Iteration 1.3: Jira Mock API - Attachments Endpoint 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 0.5 days
 **Goal**: Implement CSV file serving for attachments
 
 **Deliverables**:
-- [ ] `attachments/attachments.controller.ts` - Attachments controller
-- [ ] `attachments/attachments.service.ts` - File serving logic
-- [ ] `data/csv-files/positions.csv` - BR-1234 CSV
-- [ ] `data/csv-files/departments.csv` - BR-1235 CSV
-- [ ] `data/csv-files/certifications.csv` - BR-1236 CSV
+- [x] `attachments/attachments.controller.ts` - Attachments controller
+- [x] `attachments/attachments.service.ts` - File serving logic
+- [x] `attachments/data/csv-data.ts` - CSV content (BR-1234, BR-1235, BR-1236)
+- [x] `data/csv-files/positions.csv` - BR-1234 CSV (also in app data folder)
+- [x] `data/csv-files/departments.csv` - BR-1235 CSV (also in app data folder)
+- [x] `data/csv-files/certifications.csv` - BR-1236 CSV (also in app data folder)
 
 **Success Criteria**:
 ```bash
@@ -127,11 +130,11 @@ curl http://localhost:3001/api/v1/attachments/att-002
 ```
 
 **Testing Checklist**:
-- [ ] All 3 CSV files exist and have correct data
-- [ ] GET /api/v1/issues/:id/attachments returns attachment list
-- [ ] GET /api/v1/attachments/:id downloads CSV
-- [ ] CSV Content-Type header is correct
-- [ ] CSV content matches examples in demo-workspace/examples/
+- [x] All 3 CSV files exist and have correct data
+- [x] GET /api/v1/issues/:id/attachments returns attachment list
+- [x] GET /api/v1/attachments/:id downloads CSV
+- [x] CSV Content-Type header is correct
+- [x] CSV content matches examples in demo-workspace/examples/
 
 **Blocked By**: Iteration 1.2
 
