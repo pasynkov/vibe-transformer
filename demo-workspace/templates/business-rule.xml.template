@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  UKG Pro Business Rule XML Template
+
+  This template generates a Business Rule import file from CSV data.
+
+  Variables to replace:
+  - {{businessRuleName}} : Business Rule name from Jira (e.g., CO_EmployeePositions)
+  - {{countryCode}}      : ISO 3166-1 alpha-3 country code (e.g., USA, CAN, GBR)
+  - {{ruleCode}}         : Unique rule code from CSV (max 6 chars, alphanumeric + _ -)
+  - {{description}}      : Rule description from CSV (max 255 chars, no special chars)
+
+  Validation Rules:
+  1. RuleCode: 1-6 characters, pattern ^[A-Z0-9_-]{1,6}$, must be unique
+  2. Description: 1-255 characters, pattern ^[A-Za-z0-9 _-]{1,255}$
+  3. CountryCode: ISO 3166-1 alpha-3 (USA, CAN, GBR, etc.)
+  4. BusinessRule: Must start with CO_, pattern ^CO_[A-Za-z0-9_]+$
+
+  Usage:
+  1. Read CSV file (RuleCode, Description columns)
+  2. For each row, create one <Transaction> element
+  3. Replace placeholders with actual values
+  4. Validate against schema
+  5. Submit to Transformator API
+-->
+<Import>
+  {{#each csvRows}}
+  <!-- Transaction for: {{ruleCode}} -->
+  <Transaction>
+    <Header>
+      <!-- Always SIMPLERULE for Business Rule imports -->
+      <TransactionType>SIMPLERULE</TransactionType>
+      <!-- Business Rule name from Jira task (starts with CO_) -->
+      <BusinessRule>{{businessRuleName}}</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <!-- Unique code from CSV (max 6 chars) -->
+      <RuleCode>{{ruleCode}}</RuleCode>
+      <!-- Description from CSV (max 255 chars, alphanumeric only) -->
+      <Description>{{description}}</Description>
+      <!-- Country code from Jira (default: USA) -->
+      <CountryCode>{{countryCode}}</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  {{/each}}
+</Import>

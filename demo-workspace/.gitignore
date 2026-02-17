@@ -1,0 +1,11 @@
+# Generated files during workflow
+input-*.csv
+metadata-*.json
+validation-result-*.json
+import-result-*.json
+tasks-list.json
+output/*.xml
+
+# Keep the output directory structure
+!output/.gitkeep
+!output/README.md

@@ -5,7 +5,7 @@ export const SEED_ISSUES: IssueDto[] = [
   {
     id: '10001',
     key: 'BR-1234',
-    summary: 'Create Business Rule: Employee Positions',
+    summary: 'Create Business Rule: Employee Positions [0 ошибок]',
     description: `# Business Rule Request
 
 Create a new Business Rule for employee positions in the school district.
@@ -56,7 +56,7 @@ See attached CSV file with position codes and descriptions.
   {
     id: '10002',
     key: 'BR-1235',
-    summary: 'Create Business Rule: Department Codes',
+    summary: 'Create Business Rule: Department Codes [3 ошибки]',
     description: `# Business Rule Request
 
 Create Business Rule for department codes.
@@ -107,7 +107,7 @@ See attached CSV. **Note**: Data quality issues may exist - please validate care
   {
     id: '10003',
     key: 'BR-1236',
-    summary: 'Create Business Rule: Teacher Certifications',
+    summary: 'Create Business Rule: Teacher Certifications [0 ошибок]',
     description: `# Business Rule Request
 
 Create comprehensive Business Rule for teacher certification codes.
