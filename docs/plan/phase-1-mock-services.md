@@ -8,18 +8,19 @@
 
 ## Iterations
 
-### Iteration 1.1: Jira Mock API - Basic Setup ⏳
+### Iteration 1.1: Jira Mock API - Basic Setup 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 0.5 days
 **Goal**: Create NestJS monorepo structure and basic Jira Mock API with health check
 
 **Deliverables**:
-- [ ] `mock-services/package.json` - Monorepo root with workspaces
-- [ ] `mock-services/nest-cli.json` - Monorepo configuration
-- [ ] `mock-services/apps/jira-mock/src/main.ts` - Entry point
-- [ ] `mock-services/apps/jira-mock/src/app.module.ts` - Root module
-- [ ] `mock-services/apps/jira-mock/src/health/health.controller.ts` - Health check
+- [x] `mock-services/package.json` - Monorepo root with workspaces
+- [x] `mock-services/nest-cli.json` - Monorepo configuration
+- [x] `mock-services/apps/jira-mock/src/main.ts` - Entry point
+- [x] `mock-services/apps/jira-mock/src/app.module.ts` - Root module
+- [x] `mock-services/apps/jira-mock/src/health/health.controller.ts` - Health check
 
 **Success Criteria**:
 ```bash
@@ -33,10 +34,10 @@ curl http://localhost:3001/api/health
 ```
 
 **Testing Checklist**:
-- [ ] Server starts on port 3001
-- [ ] Health endpoint returns 200 OK
-- [ ] Swagger docs accessible at `/api/docs`
-- [ ] No errors in console
+- [x] Server starts on port 3001
+- [x] Health endpoint returns 200 OK
+- [x] Swagger docs accessible at `/api/docs`
+- [x] No errors in console
 
 **Blocked By**: None
 

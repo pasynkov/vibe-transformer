@@ -1,0 +1,12 @@
+{
+  "name": "jira-mock",
+  "version": "1.0.0",
+  "description": "Jira Mock API for VibeTransformer demo",
+  "scripts": {
+    "start": "nest start jira-mock",
+    "start:dev": "nest start jira-mock --watch",
+    "start:debug": "nest start jira-mock --debug --watch",
+    "start:prod": "node ../../dist/apps/jira-mock/main",
+    "build": "nest build jira-mock"
+  }
+}

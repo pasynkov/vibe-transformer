@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps",
+  "monorepo": true,
+  "root": "apps",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/tsconfig.json"
+  },
+  "projects": {
+    "jira-mock": {
+      "type": "application",
+      "root": "apps/jira-mock",
+      "entryFile": "main",
+      "sourceRoot": "apps/jira-mock/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/jira-mock/tsconfig.app.json"
+      }
+    },
+    "transformator-mock": {
+      "type": "application",
+      "root": "apps/transformator-mock",
+      "entryFile": "main",
+      "sourceRoot": "apps/transformator-mock/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/transformator-mock/tsconfig.app.json"
+      }
+    }
+  }
+}
