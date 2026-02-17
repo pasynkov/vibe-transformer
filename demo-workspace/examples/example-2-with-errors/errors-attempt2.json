@@ -1,0 +1,27 @@
+{
+  "valid": false,
+  "attemptNumber": 2,
+  "validatedAt": "2026-02-17T10:18:00Z",
+  "errors": [
+    {
+      "line": 54,
+      "column": 20,
+      "code": "INVALID_CHARACTERS",
+      "message": "RuleCode 'SPECIAL!' contains invalid character '!'",
+      "severity": "error",
+      "field": "RuleCode",
+      "suggestion": "Remove special characters from RuleCode. Allowed: letters, numbers, hyphens, underscores. Example: 'SPECIAL'"
+    }
+  ],
+  "warnings": [
+    {
+      "line": 47,
+      "column": 15,
+      "code": "SHORT_RULE_CODE",
+      "message": "RuleCode 'P1' is very short (2 chars). Consider using more descriptive code.",
+      "severity": "warning",
+      "field": "RuleCode",
+      "suggestion": "Use at least 4 characters for better readability. Example: 'SALE' or 'SALES'"
+    }
+  ]
+}

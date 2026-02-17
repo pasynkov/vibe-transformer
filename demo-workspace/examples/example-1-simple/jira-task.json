@@ -1,0 +1,30 @@
+{
+  "id": "10001",
+  "key": "BR-1234",
+  "summary": "Create Business Rule: Employee Positions",
+  "description": "# Business Rule Request\n\nCreate a new Business Rule for employee positions in the school district.\n\n## Requirements\n\n- Business Rule Name: CO_EmployeePositions\n- Country: USA\n- Transaction Type: SIMPLERULE\n\n## Data Source\n\nSee attached CSV file with position codes and descriptions.\n\n## Acceptance Criteria\n\n- All position codes imported successfully\n- Validation passes in Transformator\n- No duplicate codes\n",
+  "status": "In Progress",
+  "assignee": {
+    "name": "john.doe",
+    "displayName": "John Doe",
+    "email": "john.doe@schooldistrict.edu"
+  },
+  "created": "2026-02-15T10:00:00Z",
+  "updated": "2026-02-16T14:30:00Z",
+  "customFields": {
+    "businessRuleName": "CO_EmployeePositions",
+    "countryCode": "USA",
+    "transactionType": "SIMPLERULE",
+    "targetEnvironment": "DEV"
+  },
+  "attachments": [
+    {
+      "id": "att-001",
+      "filename": "positions.csv",
+      "mimeType": "text/csv",
+      "size": 245,
+      "created": "2026-02-15T10:05:00Z",
+      "downloadUrl": "/api/v1/attachments/att-001"
+    }
+  ]
+}

@@ -273,9 +273,9 @@ interface ValidationError {
 ### Demo Script
 
 **Step 1**: Show the problem
-- Open Jira Mock UI (simple web interface)
-- Show task "BR-1234" with CSV attachment
-- Explain manual process pain points
+- Show example Jira task from `demo-workspace/examples/example-1-simple/jira-task.json`
+- Show CSV data (`input.csv`)
+- Explain manual process pain points (20+ minutes to create XML manually)
 
 **Step 2**: AI-assisted workflow
 - Open VS Code

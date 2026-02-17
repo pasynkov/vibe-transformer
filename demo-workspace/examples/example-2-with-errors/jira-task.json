@@ -1,0 +1,30 @@
+{
+  "id": "10002",
+  "key": "BR-1235",
+  "summary": "Create Business Rule: Department Codes",
+  "description": "# Business Rule Request\n\nCreate Business Rule for department codes.\n\n## Requirements\n\n- Business Rule Name: CO_DepartmentCodes\n- Country: USA\n- Transaction Type: SIMPLERULE\n\n## Data Source\n\nSee attached CSV. **Note**: Data quality issues may exist - please validate carefully.\n\n## Acceptance Criteria\n\n- All valid department codes imported\n- Duplicates resolved\n- Invalid characters removed\n",
+  "status": "In Progress",
+  "assignee": {
+    "name": "john.doe",
+    "displayName": "John Doe",
+    "email": "john.doe@schooldistrict.edu"
+  },
+  "created": "2026-02-16T09:00:00Z",
+  "updated": "2026-02-16T15:00:00Z",
+  "customFields": {
+    "businessRuleName": "CO_DepartmentCodes",
+    "countryCode": "USA",
+    "transactionType": "SIMPLERULE",
+    "targetEnvironment": "DEV"
+  },
+  "attachments": [
+    {
+      "id": "att-002",
+      "filename": "departments.csv",
+      "mimeType": "text/csv",
+      "size": 198,
+      "created": "2026-02-16T09:05:00Z",
+      "downloadUrl": "/api/v1/attachments/att-002"
+    }
+  ]
+}

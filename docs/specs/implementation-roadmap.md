@@ -101,7 +101,7 @@ All components are based on proven technologies:
 - [ ] Troubleshooting guide
 
 **Polish**
-- [ ] Web UI for Jira Mock (optional)
+- [ ] Example data files in demo-workspace/examples/
 - [ ] Metrics dashboard (optional)
 - [ ] README with setup instructions
 

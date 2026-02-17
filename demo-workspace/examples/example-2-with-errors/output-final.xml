@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FINAL: All errors fixed, ready for import -->
+<Import>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ADMIN1</RuleCode>
+      <Description>Administration</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ADMIN2</RuleCode>
+      <Description>Administrative Services</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>HR</RuleCode>
+      <Description>Human Resources</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>POS001</RuleCode>
+      <Description>IT Support Position</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>P1</RuleCode>
+      <Description>Sales Department</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_DepartmentCodes</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>SPECIAL</RuleCode>
+      <Description>Special Projects</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+</Import>

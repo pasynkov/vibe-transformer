@@ -1,0 +1,30 @@
+{
+  "id": "10003",
+  "key": "BR-1236",
+  "summary": "Create Business Rule: Teacher Certifications",
+  "description": "# Business Rule Request\n\nCreate comprehensive Business Rule for teacher certification codes.\n\n## Requirements\n\n- Business Rule Name: CO_TeacherCertifications\n- Country: USA\n- Transaction Type: SIMPLERULE\n\n## Data Source\n\nSee attached CSV with 15 certification types.\n\n## Acceptance Criteria\n\n- All certification codes imported\n- Codes follow state requirements\n- Ready for production deployment\n",
+  "status": "In Progress",
+  "assignee": {
+    "name": "sarah.smith",
+    "displayName": "Sarah Smith",
+    "email": "sarah.smith@schooldistrict.edu"
+  },
+  "created": "2026-02-17T08:00:00Z",
+  "updated": "2026-02-17T09:00:00Z",
+  "customFields": {
+    "businessRuleName": "CO_TeacherCertifications",
+    "countryCode": "USA",
+    "transactionType": "SIMPLERULE",
+    "targetEnvironment": "PROD"
+  },
+  "attachments": [
+    {
+      "id": "att-003",
+      "filename": "certifications.csv",
+      "mimeType": "text/csv",
+      "size": 512,
+      "created": "2026-02-17T08:10:00Z",
+      "downloadUrl": "/api/v1/attachments/att-003"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "valid": false,
+  "attemptNumber": 1,
+  "validatedAt": "2026-02-17T10:15:00Z",
+  "errors": [
+    {
+      "line": 12,
+      "column": 8,
+      "code": "DUPLICATE_RULE_CODE",
+      "message": "RuleCode 'ADMIN' appears multiple times in the import",
+      "severity": "error",
+      "field": "RuleCode",
+      "suggestion": "Ensure all RuleCode values are unique. Consider using 'ADMIN1', 'ADMIN2' for variations."
+    },
+    {
+      "line": 33,
+      "column": 15,
+      "code": "RULE_CODE_TOO_LONG",
+      "message": "RuleCode 'POSITION001' exceeds maximum length of 6 characters",
+      "severity": "error",
+      "field": "RuleCode",
+      "suggestion": "Shorten RuleCode to 6 characters or less. Example: 'POS001'"
+    }
+  ],
+  "warnings": []
+}

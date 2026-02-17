@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Import>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ELEM</RuleCode>
+      <Description>Elementary Education K-6</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>SPED</RuleCode>
+      <Description>Special Education K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>MATH</RuleCode>
+      <Description>Secondary Mathematics 7-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ENG</RuleCode>
+      <Description>Secondary English Language Arts 7-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>SCI</RuleCode>
+      <Description>Secondary Science 7-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>SOC</RuleCode>
+      <Description>Secondary Social Studies 7-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>PE</RuleCode>
+      <Description>Physical Education K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>MUSIC</RuleCode>
+      <Description>Music Education K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ART</RuleCode>
+      <Description>Visual Arts K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ESL</RuleCode>
+      <Description>English as Second Language K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>READ</RuleCode>
+      <Description>Reading Specialist K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>ADMIN</RuleCode>
+      <Description>School Administration PreK-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>GUID</RuleCode>
+      <Description>School Guidance Counselor K-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>LIBR</RuleCode>
+      <Description>School Librarian PreK-12</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_TeacherCertifications</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>TECH</RuleCode>
+      <Description>Educational Technology Specialist</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+</Import>

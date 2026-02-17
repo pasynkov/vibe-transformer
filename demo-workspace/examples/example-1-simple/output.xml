@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Import>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_EmployeePositions</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>BHS1</RuleCode>
+      <Description>Behavior Intervention Specialist 1</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_EmployeePositions</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>BHS2</RuleCode>
+      <Description>Behavior Intervention Specialist 2</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_EmployeePositions</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>COUNS</RuleCode>
+      <Description>School Counselor</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_EmployeePositions</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>PSYCH</RuleCode>
+      <Description>School Psychologist</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+  <Transaction>
+    <Header>
+      <TransactionType>SIMPLERULE</TransactionType>
+      <BusinessRule>CO_EmployeePositions</BusinessRule>
+    </Header>
+    <SimpleRule>
+      <RuleCode>SLPA</RuleCode>
+      <Description>Speech Language Pathology Assistant</Description>
+      <CountryCode>USA</CountryCode>
+    </SimpleRule>
+  </Transaction>
+</Import>
