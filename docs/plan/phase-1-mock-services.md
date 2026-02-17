@@ -141,11 +141,12 @@ curl http://localhost:3001/api/v1/attachments/att-002
 
 ---
 
-### Iteration 1.4: Transformator Mock API - Basic Setup 🔄
+### Iteration 1.4: Transformator Mock API - Basic Setup ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 0.5 days
+**Completed**: 2026-02-17
+**Duration**: 0.5 days (actual: ~30 min)
 **Goal**: Create Transformator Mock API with health check
 
 **Deliverables**:
@@ -172,18 +173,19 @@ curl http://localhost:3002/api/health
 
 ---
 
-### Iteration 1.5: Transformator Mock API - Validation Endpoint ⏳
+### Iteration 1.5: Transformator Mock API - Validation Endpoint 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 1 day
 **Goal**: Implement POST /api/v1/business-rules/validate with basic XML validation
 
 **Deliverables**:
-- [ ] `validation/validation.controller.ts` - Validation controller
-- [ ] `validation/validation.service.ts` - Validation business logic
-- [ ] `validation/dto/validate-request.dto.ts` - Request DTO
-- [ ] `validation/dto/validation-result.dto.ts` - Response DTO
-- [ ] `state/validation-state.service.ts` - Track attempts per ruleId
+- [x] `validation/validation.controller.ts` - Validation controller
+- [x] `validation/validation.service.ts` - Validation business logic
+- [x] `validation/dto/validate-request.dto.ts` - Request DTO
+- [x] `validation/dto/validation-result.dto.ts` - Response DTO
+- [x] `state/validation-state.service.ts` - Track attempts per ruleId
 
 **Success Criteria**:
 ```bash
@@ -209,11 +211,11 @@ curl -X POST http://localhost:3002/api/v1/business-rules/validate \
 ```
 
 **Testing Checklist**:
-- [ ] POST /api/v1/business-rules/validate accepts XML
-- [ ] Validates against basic schema (XML structure)
-- [ ] Returns attemptNumber correctly
-- [ ] State persists across requests for same ruleId
-- [ ] Different ruleIds have independent state
+- [x] POST /api/v1/business-rules/validate accepts XML
+- [x] Validates against basic schema (XML structure)
+- [x] Returns attemptNumber correctly
+- [x] State persists across requests for same ruleId
+- [x] Different ruleIds have independent state
 
 **Blocked By**: Iteration 1.4
 
