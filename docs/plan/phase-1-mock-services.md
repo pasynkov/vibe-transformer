@@ -222,11 +222,12 @@ curl -X POST http://localhost:3002/api/v1/business-rules/validate \
 
 ---
 
-### Iteration 1.6: Transformator Mock API - Error Generation Logic 🔄
+### Iteration 1.6: Transformator Mock API - Error Generation Logic ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 1.5 days
+**Completed**: 2026-02-17
+**Duration**: 1.5 days (actual: ~2 hours)
 **Goal**: Implement iteration-based error generation (attempt 1 → structural, attempt 2 → content, attempt 3 → success)
 
 **Deliverables**:
@@ -289,17 +290,18 @@ curl -X POST http://localhost:3002/api/v1/business-rules/validate \
 
 ---
 
-### Iteration 1.7: Transformator Mock API - Import Jobs (Optional) ⏳
+### Iteration 1.7: Transformator Mock API - Import Jobs 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 1 day
 **Goal**: Implement import job simulation with status polling
 
 **Deliverables**:
-- [ ] `import/import.controller.ts` - Import controller
-- [ ] `import/import.service.ts` - Job creation and simulation
-- [ ] `jobs/jobs.controller.ts` - Job status controller
-- [ ] `jobs/jobs.service.ts` - Job state management
+- [x] `import/import.controller.ts` - Import controller
+- [x] `import/import.service.ts` - Job creation and simulation
+- [x] `jobs/jobs.controller.ts` - Job status controller
+- [x] `jobs/jobs.service.ts` - Job state management
 
 **Success Criteria**:
 ```bash
@@ -336,10 +338,10 @@ curl http://localhost:3002/api/v1/jobs/job-uuid-123/status | jq
 ```
 
 **Testing Checklist**:
-- [ ] POST /api/v1/business-rules/import creates job
-- [ ] Job progresses from queued → running → completed
-- [ ] GET /api/v1/jobs/:id/status returns current state
-- [ ] Completed jobs show results
+- [x] POST /api/v1/business-rules/import creates job
+- [x] Job progresses from queued → running → completed
+- [x] GET /api/v1/jobs/:id/status returns current state
+- [x] Completed jobs show results
 
 **Blocked By**: Iteration 1.6
 
