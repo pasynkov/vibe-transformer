@@ -55,13 +55,31 @@ cd ../demo-workspace
 code .
 ```
 
-### Step 3: Verify Copilot is Active
+### Step 3: Install VS Code Extension (Optional but Recommended)
+
+The VS Code Extension adds `@vibe-transformer` commands to Copilot Chat for easier workflow.
+
+**Installation** (one-time):
+
+1. In VS Code, press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
+2. Type: "Extensions: Install from VSIX"
+3. Navigate to: `../vibe-transformer-extension/vibe-transformer-0.1.0.vsix`
+4. Click "Install"
+5. Reload window: `Cmd+Shift+P` → "Developer: Reload Window"
+
+**Verify**:
+- Open Copilot Chat: `Cmd+Shift+I`
+- Type `@vibe-transformer` - should autocomplete
+
+**Without Extension**: You can still use Copilot Instructions (`.github/copilot-instructions.md`) without the extension. Just use full sentences instead of `@vibe-transformer` commands.
+
+### Step 4: Verify Copilot is Active
 
 1. Check bottom-right corner of VS Code → "Copilot" icon should be active
 2. Open Copilot Chat: `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Shift+I` (Mac)
 3. Test: Type "Hello, can you help with Business Rules?"
 
-### Step 4: Run Demo
+### Step 5: Run Demo
 
 You're ready! See [Demo Workflow](#-demo-workflow) below.
 
@@ -121,6 +139,12 @@ cat input.csv
 
 In VS Code Copilot Chat, type:
 
+**With Extension**:
+```
+@vibe-transformer fetch BR-1235
+```
+
+**Without Extension** (using Copilot Instructions):
 ```
 I need to create a Business Rule for Jira task BR-1235.
 The task details are in examples/example-2-with-errors/jira-task.json
@@ -138,6 +162,12 @@ Please read both files and summarize what we need to do.
 
 In Copilot Chat:
 
+**With Extension**:
+```
+@vibe-transformer generate
+```
+
+**Without Extension**:
 ```
 Generate the XML file for this Business Rule using the template.
 Save it to output/BR-1235-attempt1.xml
@@ -158,6 +188,12 @@ ls -lh output/BR-1235-attempt1.xml
 
 In Copilot Chat:
 
+**With Extension**:
+```
+@vibe-transformer validate
+```
+
+**Without Extension**:
 ```
 Validate this XML against the Transformator API at http://localhost:3002/api/v1/business-rules/validate
 
@@ -195,6 +231,12 @@ Request body:
 
 In Copilot Chat:
 
+**With Extension**:
+```
+@vibe-transformer fix
+```
+
+**Without Extension**:
 ```
 Fix these validation errors and regenerate the XML.
 Save to output/BR-1235-attempt2.xml
@@ -610,6 +652,29 @@ xmllint --noout output/BR-1235-attempt1.xml
 
 ---
 
+## 📁 Project Structure
+
+```
+vibe-transformer-2/
+├── README.md                          # This file
+├── demo-workspace/                    # Open in VS Code for demo
+│   ├── .github/copilot-instructions.md  # Auto-loaded by Copilot
+│   ├── examples/                      # 3 demo scenarios
+│   └── output/                        # Generated XML files
+│
+├── mock-services/                     # NestJS Monorepo
+│   ├── apps/jira-mock/               # Port 3001
+│   └── apps/transformator-mock/      # Port 3002
+│
+├── vibe-transformer-extension/        # VS Code Extension
+│   ├── vibe-transformer-0.1.0.vsix   # Installable extension
+│   └── README.md                      # Installation guide
+│
+└── docs/specs/                        # Technical specifications
+```
+
+---
+
 ## 📚 Documentation
 
 ### For Demo Presenters
@@ -617,10 +682,12 @@ xmllint --noout output/BR-1235-attempt1.xml
 - **[START_HERE.md](START_HERE.md)** - Project overview and navigation
 - **[demo-workspace/README.md](demo-workspace/README.md)** - Demo workspace guide
 - **[demo-workspace/examples/README.md](demo-workspace/examples/README.md)** - Example scenarios
+- **[vibe-transformer-extension/README.md](vibe-transformer-extension/README.md)** - Extension installation
 
 ### For Developers
 
 - **[mock-services/README.md](mock-services/README.md)** - API development guide
+- **[vibe-transformer-extension/README.md](vibe-transformer-extension/README.md)** - Extension development
 - **[docs/specs/](docs/specs/)** - Complete technical specifications
   - [project-overview.md](docs/specs/project-overview.md) - Full project requirements
   - [project-structure.md](docs/specs/project-structure.md) - Folder structure

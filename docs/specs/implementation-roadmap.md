@@ -23,12 +23,8 @@
    - **Status**: Stable API (VS Code 1.85+)
    - **Effort**: 3-4 days
    - **Documentation**: https://code.visualstudio.com/api/extension-guides/chat
+   - **Installation**: Local `.vsix` file (no Marketplace publication needed)
    - **Examples**: Microsoft provides official examples
-
-3. **⚠️ GitHub Copilot Extension** (Official)
-   - **Status**: Available but complex
-   - **Effort**: 2-4 weeks + approval process
-   - **Recommendation**: NOT for MVP/demo
 
 ### Architecture Validation: ✅ SOLID
 
