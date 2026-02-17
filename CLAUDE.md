@@ -183,7 +183,12 @@ docker-compose up -d
 
 The `docs/plan/` directory contains the **complete development plan** with iterations and progress tracking.
 
-**Main file**: `docs/plan/development-plan.md`
+**Files**:
+- `docs/plan/overview.md` - 🎯 Start here! Phase overview and progress tracking
+- `docs/plan/phase-1-mock-services.md` - Phase 1: Mock Services Backend (8 iterations)
+- `docs/plan/phase-2-copilot.md` - Phase 2: Copilot Integration (3 iterations)
+- `docs/plan/phase-3-extension.md` - Phase 3: VS Code Extension (6 iterations, optional)
+- `docs/plan/phase-4-polish.md` - Phase 4: Integration & Polish (2 iterations)
 
 ### How to Work with the Plan
 
@@ -193,9 +198,10 @@ The `docs/plan/` directory contains the **complete development plan** with itera
 
 1. **Check Current Status**:
    ```bash
-   # Read the plan
-   Read docs/plan/development-plan.md
+   # Read the overview to understand current phase
+   Read docs/plan/overview.md
 
+   # Open current phase file (e.g., phase-1-mock-services.md)
    # Find current iteration (look for status: in_progress or pending)
    ```
 
@@ -228,9 +234,11 @@ The `docs/plan/` directory contains the **complete development plan** with itera
    - After confirmation, commit and move to next iteration
 
 6. **Progress Tracking**:
-   - Update "Progress Tracking" section at bottom of plan
+   - Update progress in `docs/plan/overview.md`
+   - Change ⬜ to ✅ in progress bars
    - Update phase percentages
    - Update overall progress percentage
+   - Also update progress section at bottom of each phase file
 
 ### Example Status Updates
 
@@ -286,7 +294,7 @@ The `docs/specs/` directory is the **central location** for all project specific
 
 **When creating features or making changes:**
 
-1. **Check development plan first**: See what iteration you're on in `docs/plan/development-plan.md`
+1. **Check development plan first**: See what iteration you're on in `docs/plan/overview.md` and open the relevant phase file
 2. **Check for existing specs**: Always read relevant specifications from `docs/specs/` before starting implementation
 3. **Follow the plan**: Implement deliverables listed in current iteration
 4. **Test thoroughly**: Run all success criteria tests

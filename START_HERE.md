@@ -20,8 +20,9 @@
 
 ### 👨‍💻 For Developers
 
-**🎯 Start here**: [`docs/plan/development-plan.md`](docs/plan/development-plan.md)
-- **19 iterations** with clear deliverables
+**🎯 Start here**: [`docs/plan/overview.md`](docs/plan/overview.md)
+- **19 iterations** organized into 4 phases
+- Each phase in separate file for easier navigation
 - Test after each iteration
 - Update status as you progress
 

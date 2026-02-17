@@ -4,30 +4,34 @@ This directory contains the implementation plan for VibeTransformer 2.0.
 
 ## Files
 
-- **[development-plan.md](development-plan.md)** - Main development plan with iterations
+- **[overview.md](overview.md)** - 🎯 Start here! Phase overview and progress tracking
+- **[phase-1-mock-services.md](phase-1-mock-services.md)** - Phase 1: Mock Services Backend (8 iterations)
+- **[phase-2-copilot.md](phase-2-copilot.md)** - Phase 2: Copilot Integration (3 iterations)
+- **[phase-3-extension.md](phase-3-extension.md)** - Phase 3: VS Code Extension (6 iterations, optional)
+- **[phase-4-polish.md](phase-4-polish.md)** - Phase 4: Integration & Polish (2 iterations)
 
 ## Plan Structure
 
 The plan is organized into **4 phases** with **19 iterations**:
 
-### Phase 1: Mock Services Backend (8 iterations, 6 days)
+### [Phase 1: Mock Services Backend](phase-1-mock-services.md) (8 iterations, 6 days)
 - Jira Mock API (3 iterations)
 - Transformator Mock API (4 iterations)
 - Docker setup (1 iteration)
 
-### Phase 2: Copilot Integration (3 iterations, 2 days)
+### [Phase 2: Copilot Integration](phase-2-copilot.md) (3 iterations, 2 days)
 - Copilot Instructions
 - XML Templates
 - Integration testing
 
-### Phase 3: VS Code Extension (6 iterations, 4 days) - Optional
+### [Phase 3: VS Code Extension](phase-3-extension.md) (6 iterations, 4 days) - Optional
 - Extension scaffold
 - Chat participant
 - Commands implementation
 - UI components
 - Packaging
 
-### Phase 4: Integration & Polish (2 iterations, 1 day)
+### [Phase 4: Integration & Polish](phase-4-polish.md) (2 iterations, 1 day)
 - End-to-end testing
 - Documentation updates
 
@@ -53,27 +57,31 @@ Each iteration includes:
 ### For Claude Code
 
 When starting work:
-1. Read `development-plan.md`
-2. Find first `pending` iteration
-3. Change status to `in_progress`
-4. Complete all deliverables
-5. Run all tests in Success Criteria
-6. Check all items in Testing Checklist
-7. Report results to user
-8. Wait for user confirmation
-9. Update status to `done`
-10. Move to next iteration
+1. Read `overview.md` to understand current phase
+2. Open current phase file (e.g., `phase-1-mock-services.md`)
+3. Find first `pending` iteration
+4. Change status to `in_progress`
+5. Complete all deliverables
+6. Run all tests in Success Criteria
+7. Check all items in Testing Checklist
+8. Report results to user
+9. Wait for user confirmation
+10. Update status to `done`
+11. Update progress in `overview.md`
+12. Move to next iteration
 
 ### For Developers
 
-1. Open `development-plan.md`
-2. Find current iteration (status: `in_progress`)
-3. Implement deliverables
-4. Test using Success Criteria commands
-5. Mark checkboxes as completed
-6. Update status when done
-7. Commit changes
-8. Move to next iteration
+1. Open `overview.md` to check overall progress
+2. Navigate to current phase file
+3. Find current iteration (status: `in_progress`)
+4. Implement deliverables
+5. Test using Success Criteria commands
+6. Mark checkboxes as completed
+7. Update status when done
+8. Update progress tracking
+9. Commit changes
+10. Move to next iteration
 
 ### Updating Status
 
@@ -97,25 +105,29 @@ When starting iteration:
 
 ## Progress Tracking
 
-Check overall progress at bottom of `development-plan.md`:
+Check overall progress in `overview.md`:
 
 ```markdown
-## Progress Tracking
+## Overall Progress
 
-### Overall Status
+Total: 0/19 iterations (0%)
 
-- Phase 1 (Mock Services): ✅ Done (8/8 iterations)
-- Phase 2 (Copilot Integration): 🔄 In Progress (1/3 iterations)
-- Phase 3 (VS Code Extension): ⏳ Not Started (0/6 iterations)
-- Phase 4 (Integration & Polish): ⏳ Not Started (0/2 iterations)
-
-Total Progress: 9/19 iterations (47%)
+Phase 1: ⬜⬜⬜⬜⬜⬜⬜⬜ 0/8
+Phase 2: ⬜⬜⬜ 0/3
+Phase 3: ⬜⬜⬜⬜⬜⬜ 0/6
+Phase 4: ⬜⬜ 0/2
 ```
+
+Update the progress after each completed iteration by changing ⬜ to ✅.
 
 ## Quick Links
 
-- **Current Status**: See [development-plan.md](development-plan.md#progress-tracking)
-- **Next Iteration**: Find first `pending` in [development-plan.md](development-plan.md)
+- **🎯 Start Here**: [overview.md](overview.md)
+- **Current Status**: See [overview.md](overview.md#overall-progress)
+- **Phase 1**: [phase-1-mock-services.md](phase-1-mock-services.md)
+- **Phase 2**: [phase-2-copilot.md](phase-2-copilot.md)
+- **Phase 3**: [phase-3-extension.md](phase-3-extension.md)
+- **Phase 4**: [phase-4-polish.md](phase-4-polish.md)
 - **Specifications**: See [../specs/](../specs/)
 
 ---

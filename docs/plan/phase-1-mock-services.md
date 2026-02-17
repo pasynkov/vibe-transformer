@@ -1,0 +1,398 @@
+# Phase 1: Mock Services Backend
+
+**Duration**: 6 days (8 iterations)
+**Status**: ⏳ Not Started (0/8 done)
+**Goal**: Build NestJS monorepo with Jira Mock API and Transformator Mock API
+
+---
+
+## Iterations
+
+### Iteration 1.1: Jira Mock API - Basic Setup ⏳
+
+**Status**: `pending`
+**Duration**: 0.5 days
+**Goal**: Create NestJS monorepo structure and basic Jira Mock API with health check
+
+**Deliverables**:
+- [ ] `mock-services/package.json` - Monorepo root with workspaces
+- [ ] `mock-services/nest-cli.json` - Monorepo configuration
+- [ ] `mock-services/apps/jira-mock/src/main.ts` - Entry point
+- [ ] `mock-services/apps/jira-mock/src/app.module.ts` - Root module
+- [ ] `mock-services/apps/jira-mock/src/health/health.controller.ts` - Health check
+
+**Success Criteria**:
+```bash
+cd mock-services
+npm install
+npm run start:dev:jira
+
+# Test health endpoint
+curl http://localhost:3001/api/health
+# Expected: {"status":"ok"}
+```
+
+**Testing Checklist**:
+- [ ] Server starts on port 3001
+- [ ] Health endpoint returns 200 OK
+- [ ] Swagger docs accessible at `/api/docs`
+- [ ] No errors in console
+
+**Blocked By**: None
+
+---
+
+### Iteration 1.2: Jira Mock API - Issues Endpoint ⏳
+
+**Status**: `pending`
+**Duration**: 1 day
+**Goal**: Implement GET /api/v1/issues/:ticketId endpoint with in-memory data
+
+**Deliverables**:
+- [ ] `issues/issues.controller.ts` - Issues controller
+- [ ] `issues/issues.service.ts` - Business logic
+- [ ] `issues/issues.module.ts` - Issues module
+- [ ] `issues/dto/issue.dto.ts` - Issue DTO with validation
+- [ ] `data/seed-data.ts` - Seed data for BR-1234, BR-1235, BR-1236
+
+**Success Criteria**:
+```bash
+# Get issue BR-1235
+curl http://localhost:3001/api/v1/issues/BR-1235 | jq
+
+# Expected:
+# {
+#   "id": "10002",
+#   "key": "BR-1235",
+#   "summary": "Create Business Rule: Department Codes",
+#   "customFields": {
+#     "businessRuleName": "CO_DepartmentCodes",
+#     "countryCode": "USA",
+#     ...
+#   }
+# }
+
+# Test 404
+curl http://localhost:3001/api/v1/issues/BR-9999
+# Expected: 404 Not Found
+```
+
+**Testing Checklist**:
+- [ ] GET /api/v1/issues/BR-1234 returns employee positions data
+- [ ] GET /api/v1/issues/BR-1235 returns department codes data
+- [ ] GET /api/v1/issues/BR-1236 returns teacher certifications data
+- [ ] Non-existent ID returns 404
+- [ ] Response matches JiraIssue DTO schema
+- [ ] Swagger docs show endpoint
+
+**Blocked By**: Iteration 1.1
+
+---
+
+### Iteration 1.3: Jira Mock API - Attachments Endpoint ⏳
+
+**Status**: `pending`
+**Duration**: 0.5 days
+**Goal**: Implement CSV file serving for attachments
+
+**Deliverables**:
+- [ ] `attachments/attachments.controller.ts` - Attachments controller
+- [ ] `attachments/attachments.service.ts` - File serving logic
+- [ ] `data/csv-files/positions.csv` - BR-1234 CSV
+- [ ] `data/csv-files/departments.csv` - BR-1235 CSV
+- [ ] `data/csv-files/certifications.csv` - BR-1236 CSV
+
+**Success Criteria**:
+```bash
+# Get attachment list
+curl http://localhost:3001/api/v1/issues/BR-1235/attachments | jq
+
+# Expected:
+# {
+#   "attachments": [
+#     {
+#       "id": "att-002",
+#       "filename": "departments.csv",
+#       "downloadUrl": "/api/v1/attachments/att-002"
+#     }
+#   ]
+# }
+
+# Download CSV
+curl http://localhost:3001/api/v1/attachments/att-002
+# Expected: CSV content
+```
+
+**Testing Checklist**:
+- [ ] All 3 CSV files exist and have correct data
+- [ ] GET /api/v1/issues/:id/attachments returns attachment list
+- [ ] GET /api/v1/attachments/:id downloads CSV
+- [ ] CSV Content-Type header is correct
+- [ ] CSV content matches examples in demo-workspace/examples/
+
+**Blocked By**: Iteration 1.2
+
+---
+
+### Iteration 1.4: Transformator Mock API - Basic Setup ⏳
+
+**Status**: `pending`
+**Duration**: 0.5 days
+**Goal**: Create Transformator Mock API with health check
+
+**Deliverables**:
+- [ ] `mock-services/apps/transformator-mock/src/main.ts` - Entry point
+- [ ] `mock-services/apps/transformator-mock/src/app.module.ts` - Root module
+- [ ] `mock-services/apps/transformator-mock/src/health/health.controller.ts` - Health check
+
+**Success Criteria**:
+```bash
+npm run start:dev:transformator
+
+# Test health endpoint
+curl http://localhost:3002/api/health
+# Expected: {"status":"ok"}
+```
+
+**Testing Checklist**:
+- [ ] Server starts on port 3002
+- [ ] Health endpoint returns 200 OK
+- [ ] Swagger docs accessible at `/api/docs`
+- [ ] Both servers run concurrently: `npm run start:dev`
+
+**Blocked By**: Iteration 1.1
+
+---
+
+### Iteration 1.5: Transformator Mock API - Validation Endpoint ⏳
+
+**Status**: `pending`
+**Duration**: 1 day
+**Goal**: Implement POST /api/v1/business-rules/validate with basic XML validation
+
+**Deliverables**:
+- [ ] `validation/validation.controller.ts` - Validation controller
+- [ ] `validation/validation.service.ts` - Validation business logic
+- [ ] `validation/dto/validate-request.dto.ts` - Request DTO
+- [ ] `validation/dto/validation-result.dto.ts` - Response DTO
+- [ ] `state/validation-state.service.ts` - Track attempts per ruleId
+
+**Success Criteria**:
+```bash
+# Test validation (should return attempt 1)
+curl -X POST http://localhost:3002/api/v1/business-rules/validate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "xml": "<Import><Transaction>...</Transaction></Import>",
+    "ruleId": "BR-1235",
+    "businessRuleName": "CO_DepartmentCodes"
+  }' | jq
+
+# Expected:
+# {
+#   "valid": false,
+#   "attemptNumber": 1,
+#   "errors": [...],
+#   "validatedAt": "2026-02-17T..."
+# }
+
+# Test again (should return attempt 2)
+# Expected: attemptNumber: 2
+```
+
+**Testing Checklist**:
+- [ ] POST /api/v1/business-rules/validate accepts XML
+- [ ] Validates against basic schema (XML structure)
+- [ ] Returns attemptNumber correctly
+- [ ] State persists across requests for same ruleId
+- [ ] Different ruleIds have independent state
+
+**Blocked By**: Iteration 1.4
+
+---
+
+### Iteration 1.6: Transformator Mock API - Error Generation Logic ⏳
+
+**Status**: `pending`
+**Duration**: 1.5 days
+**Goal**: Implement iteration-based error generation (attempt 1 → structural, attempt 2 → content, attempt 3 → success)
+
+**Deliverables**:
+- [ ] `validation/validators/xml-parser.validator.ts` - Parse XML
+- [ ] `validation/validators/duplicate-checker.validator.ts` - Check duplicates
+- [ ] `validation/validators/length-validator.ts` - Check RuleCode length
+- [ ] `validation/validators/character-validator.ts` - Check invalid chars
+- [ ] `validation/error-generator.ts` - Generate errors based on attempt
+
+**Success Criteria**:
+```bash
+# Use example-2-with-errors data
+cd demo-workspace/examples/example-2-with-errors
+
+# Attempt 1 - Structural errors
+curl -X POST http://localhost:3002/api/v1/business-rules/validate \
+  -H "Content-Type: application/json" \
+  -d "{\"xml\":\"$(cat output-attempt1.xml)\",\"ruleId\":\"BR-1235\",\"businessRuleName\":\"CO_DepartmentCodes\"}" \
+  | jq
+
+# Expected errors:
+# - DUPLICATE_RULE_CODE (ADMIN)
+# - RULE_CODE_TOO_LONG (POSITION001)
+
+# Attempt 2 - Content errors
+curl -X POST http://localhost:3002/api/v1/business-rules/validate \
+  -H "Content-Type: application/json" \
+  -d "{\"xml\":\"$(cat output-attempt2.xml)\",\"ruleId\":\"BR-1235\",\"businessRuleName\":\"CO_DepartmentCodes\"}" \
+  | jq
+
+# Expected errors:
+# - INVALID_CHARACTERS (SPECIAL!)
+# Expected warnings:
+# - SHORT_RULE_CODE (P1)
+
+# Attempt 3 - Success
+curl -X POST http://localhost:3002/api/v1/business-rules/validate \
+  -H "Content-Type: application/json" \
+  -d "{\"xml\":\"$(cat output-final.xml)\",\"ruleId\":\"BR-1235\",\"businessRuleName\":\"CO_DepartmentCodes\"}" \
+  | jq
+
+# Expected:
+# {
+#   "valid": true,
+#   "attemptNumber": 3,
+#   "errors": []
+# }
+```
+
+**Testing Checklist**:
+- [ ] Attempt 1 returns DUPLICATE_RULE_CODE error
+- [ ] Attempt 1 returns RULE_CODE_TOO_LONG error
+- [ ] Attempt 2 returns INVALID_CHARACTERS error
+- [ ] Attempt 2 returns SHORT_RULE_CODE warning
+- [ ] Attempt 3 returns valid: true
+- [ ] Error messages include suggestions
+- [ ] Line numbers are provided in errors
+
+**Blocked By**: Iteration 1.5
+
+---
+
+### Iteration 1.7: Transformator Mock API - Import Jobs (Optional) ⏳
+
+**Status**: `pending`
+**Duration**: 1 day
+**Goal**: Implement import job simulation with status polling
+
+**Deliverables**:
+- [ ] `import/import.controller.ts` - Import controller
+- [ ] `import/import.service.ts` - Job creation and simulation
+- [ ] `jobs/jobs.controller.ts` - Job status controller
+- [ ] `jobs/jobs.service.ts` - Job state management
+
+**Success Criteria**:
+```bash
+# Create import job
+curl -X POST http://localhost:3002/api/v1/business-rules/import \
+  -H "Content-Type: application/json" \
+  -d '{
+    "xml": "<Import>...</Import>",
+    "ruleId": "BR-1235",
+    "businessRuleName": "CO_DepartmentCodes",
+    "environment": "DEV"
+  }' | jq
+
+# Expected:
+# {
+#   "jobId": "job-uuid-123",
+#   "status": "queued",
+#   "createdAt": "2026-02-17T..."
+# }
+
+# Poll job status
+curl http://localhost:3002/api/v1/jobs/job-uuid-123/status | jq
+
+# Expected:
+# {
+#   "jobId": "job-uuid-123",
+#   "status": "completed",
+#   "progress": 100,
+#   "result": {
+#     "success": true,
+#     "recordsImported": 6
+#   }
+# }
+```
+
+**Testing Checklist**:
+- [ ] POST /api/v1/business-rules/import creates job
+- [ ] Job progresses from queued → running → completed
+- [ ] GET /api/v1/jobs/:id/status returns current state
+- [ ] Completed jobs show results
+
+**Blocked By**: Iteration 1.6
+
+---
+
+### Iteration 1.8: Docker Setup ⏳
+
+**Status**: `pending`
+**Duration**: 0.5 days
+**Goal**: Containerize both APIs with Docker Compose
+
+**Deliverables**:
+- [ ] `mock-services/docker-compose.yml` - Orchestration
+- [ ] `mock-services/apps/jira-mock/Dockerfile` - Jira container
+- [ ] `mock-services/apps/transformator-mock/Dockerfile` - Transformator container
+- [ ] Health checks in docker-compose
+
+**Success Criteria**:
+```bash
+cd mock-services
+
+# Build and start
+docker-compose up -d
+
+# Wait for health checks
+sleep 10
+
+# Test both services
+curl http://localhost:3001/api/health
+curl http://localhost:3002/api/health
+
+# Check logs
+docker-compose logs -f
+
+# Stop
+docker-compose down
+```
+
+**Testing Checklist**:
+- [ ] `docker-compose up -d` starts both containers
+- [ ] Both services respond to health checks
+- [ ] Services can communicate (if needed)
+- [ ] Logs are accessible via `docker-compose logs`
+- [ ] `docker-compose down` stops cleanly
+- [ ] Volumes persist data if needed
+
+**Blocked By**: Iteration 1.7
+
+---
+
+## Phase 1 Progress
+
+```
+Iteration 1.1: ⬜ Jira Mock API - Basic Setup
+Iteration 1.2: ⬜ Jira Mock API - Issues Endpoint
+Iteration 1.3: ⬜ Jira Mock API - Attachments Endpoint
+Iteration 1.4: ⬜ Transformator Mock API - Basic Setup
+Iteration 1.5: ⬜ Transformator Mock API - Validation Endpoint
+Iteration 1.6: ⬜ Transformator Mock API - Error Generation Logic
+Iteration 1.7: ⬜ Transformator Mock API - Import Jobs (Optional)
+Iteration 1.8: ⬜ Docker Setup
+
+Progress: 0/8 (0%)
+```
+
+---
+
+**Next**: Start with [Iteration 1.1](#iteration-11-jira-mock-api---basic-setup-)
