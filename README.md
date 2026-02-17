@@ -670,7 +670,9 @@ vibe-transformer-2/
 │   ├── vibe-transformer-0.1.0.vsix   # Installable extension
 │   └── README.md                      # Installation guide
 │
-└── docs/specs/                        # Technical specifications
+└── docs/
+    ├── specs/                         # Technical specifications
+    └── plan/                          # Development plan with iterations
 ```
 
 ---
@@ -686,6 +688,7 @@ vibe-transformer-2/
 
 ### For Developers
 
+- **[docs/plan/development-plan.md](docs/plan/development-plan.md)** - 🎯 **Start here!** Development plan with iterations
 - **[mock-services/README.md](mock-services/README.md)** - API development guide
 - **[vibe-transformer-extension/README.md](vibe-transformer-extension/README.md)** - Extension development
 - **[docs/specs/](docs/specs/)** - Complete technical specifications

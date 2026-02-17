@@ -20,15 +20,16 @@
 
 ### 👨‍💻 For Developers
 
-**Start here**: [`docs/specs/project-overview.md`](docs/specs/project-overview.md)
-- Complete workflow
-- Data models
-- Demo scenario
+**🎯 Start here**: [`docs/plan/development-plan.md`](docs/plan/development-plan.md)
+- **19 iterations** with clear deliverables
+- Test after each iteration
+- Update status as you progress
 
-**Then read technical specs**:
-- [`api-jira-mock.md`](docs/specs/api-jira-mock.md) - Jira Mock API
-- [`api-transformator-mock.md`](docs/specs/api-transformator-mock.md) - Transformator Mock API
-- [`copilot-integration.md`](docs/specs/copilot-integration.md) - Copilot + VS Code Extension
+**Background reading**:
+- [`docs/specs/project-overview.md`](docs/specs/project-overview.md) - Complete requirements
+- [`api-jira-mock.md`](docs/specs/api-jira-mock.md) - Jira Mock API spec
+- [`api-transformator-mock.md`](docs/specs/api-transformator-mock.md) - Transformator Mock API spec
+- [`copilot-integration.md`](docs/specs/copilot-integration.md) - Copilot integration
 
 ### 📋 For Project Managers
 

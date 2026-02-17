@@ -177,6 +177,99 @@ docker-compose up -d
 
 ---
 
+## Development Plan
+
+### Plan Location
+
+The `docs/plan/` directory contains the **complete development plan** with iterations and progress tracking.
+
+**Main file**: `docs/plan/development-plan.md`
+
+### How to Work with the Plan
+
+**IMPORTANT**: Always check the development plan before starting any coding work.
+
+**Workflow**:
+
+1. **Check Current Status**:
+   ```bash
+   # Read the plan
+   Read docs/plan/development-plan.md
+
+   # Find current iteration (look for status: in_progress or pending)
+   ```
+
+2. **Start an Iteration**:
+   - Find first iteration with status: `pending`
+   - Change status to: `in_progress`
+   - Add start date: `**Started**: 2026-02-XX`
+   - Commit status update
+
+3. **During Development**:
+   - Complete all deliverables listed
+   - Check off items as you complete them: `- [ ]` → `- [x]`
+   - Follow the specifications in `docs/specs/`
+
+4. **Testing**:
+   - Run ALL commands in "Success Criteria" section
+   - Verify expected outputs match
+   - Complete ALL items in "Testing Checklist"
+   - Document any issues or deviations
+
+5. **Completion**:
+   - Change status to: `done`
+   - Add completed date: `**Completed**: 2026-02-XX`
+   - Change emoji: ⏳ → ✅
+   - Report results to user with:
+     * What was implemented
+     * Test results (all passing/failing)
+     * Any issues encountered
+   - **WAIT for user confirmation** before proceeding
+   - After confirmation, commit and move to next iteration
+
+6. **Progress Tracking**:
+   - Update "Progress Tracking" section at bottom of plan
+   - Update phase percentages
+   - Update overall progress percentage
+
+### Example Status Updates
+
+**Starting iteration**:
+```markdown
+### Iteration 1.1: Jira Mock API - Basic Setup 🔄
+
+**Status**: `in_progress`
+**Started**: 2026-02-17
+**Duration**: 0.5 days
+```
+
+**Completing iteration**:
+```markdown
+### Iteration 1.1: Jira Mock API - Basic Setup ✅
+
+**Status**: `done`
+**Started**: 2026-02-17
+**Completed**: 2026-02-17
+**Duration**: 0.5 days (actual: 0.4 days)
+```
+
+### Iteration Dependencies
+
+- **NEVER skip iterations** - they build on each other
+- **Check "Blocked By"** field before starting
+- If blocked, resolve dependency first
+- Update plan if you find missing dependencies
+
+### Plan Deviations
+
+If you need to deviate from plan:
+1. Document why in iteration notes
+2. Ask user for approval
+3. Update plan with new approach
+4. Continue with modified plan
+
+---
+
 ## Working with Specifications
 
 ### Specifications Directory
@@ -193,10 +286,11 @@ The `docs/specs/` directory is the **central location** for all project specific
 
 **When creating features or making changes:**
 
-1. **Check for existing specs first**: Always read relevant specifications from `docs/specs/` before starting implementation
-2. **Create new specs when needed**: Document new features or significant changes in `docs/specs/`
-3. **Update specs during development**: Keep specifications in sync with actual implementation
-4. **Reference specs in code**: Link to specification files in comments where appropriate
+1. **Check development plan first**: See what iteration you're on in `docs/plan/development-plan.md`
+2. **Check for existing specs**: Always read relevant specifications from `docs/specs/` before starting implementation
+3. **Follow the plan**: Implement deliverables listed in current iteration
+4. **Test thoroughly**: Run all success criteria tests
+5. **Update status**: Mark iteration as done after user confirmation
 
 ### Specification File Naming
 
