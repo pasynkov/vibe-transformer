@@ -1,0 +1,48 @@
+# IDE
+.idea/
+.vscode/*.log
+*.swp
+*.swo
+.DS_Store
+
+# Claude CLI
+.claude/
+
+# Demo workspace
+demo-workspace/output/*
+!demo-workspace/output/.gitkeep
+
+# Mock services
+mock-services/node_modules/
+mock-services/dist/
+mock-services/coverage/
+mock-services/.env
+mock-services/.env.local
+mock-services/.env.*.local
+mock-services/apps/*/dist/
+mock-services/apps/*/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
