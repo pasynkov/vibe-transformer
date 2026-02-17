@@ -1,7 +1,8 @@
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ValidateRequestDto } from './dto/validate-request.dto';
-import { ValidationResultDto, ValidationErrorDto } from './dto/validation-result.dto';
+import { ValidationResultDto } from './dto/validation-result.dto';
 import { ValidationStateService } from '../state/validation-state.service';
+import { ErrorGenerator } from './error-generator';
 
 @Injectable()
 export class ValidationService {
@@ -15,13 +16,27 @@ export class ValidationService {
     const attemptNumber = this.stateService.getAndIncrementAttempt(dto.ruleId);
 
     // Basic XML validation
-    const errors = this.validateXml(dto.xml);
+    const basicErrors = this.validateXmlStructure(dto.xml);
+    if (basicErrors.length > 0) {
+      return {
+        valid: false,
+        attemptNumber,
+        errors: basicErrors,
+        warnings: [],
+        validatedAt: new Date().toISOString(),
+        ruleId: dto.ruleId,
+        businessRuleName: dto.businessRuleName,
+      };
+    }
+
+    // Generate errors based on attempt number
+    const { errors, warnings } = ErrorGenerator.generateErrors(dto.xml, attemptNumber);
 
     const result: ValidationResultDto = {
       valid: errors.length === 0,
       attemptNumber,
       errors,
-      warnings: [],
+      warnings,
       validatedAt: new Date().toISOString(),
       ruleId: dto.ruleId,
       businessRuleName: dto.businessRuleName,
@@ -31,19 +46,18 @@ export class ValidationService {
   }
 
   /**
-   * Basic XML validation
-   * For now, just checks if XML is well-formed
-   * More sophisticated validation will be added in iteration 1.6
+   * Basic XML structure validation
+   * Checks for fundamental XML issues before content validation
    */
-  private validateXml(xml: string): ValidationErrorDto[] {
-    const errors: ValidationErrorDto[] = [];
+  private validateXmlStructure(xml: string) {
+    const errors = [];
 
     // Check if XML is empty
     if (!xml || xml.trim().length === 0) {
       errors.push({
         code: 'EMPTY_XML',
         message: 'XML content cannot be empty',
-        severity: 'error',
+        severity: 'error' as const,
         suggestion: 'Provide valid XML content',
       });
       return errors;
@@ -54,7 +68,7 @@ export class ValidationService {
       errors.push({
         code: 'INVALID_XML_STRUCTURE',
         message: 'XML must be wrapped in <Import></Import> tags',
-        severity: 'error',
+        severity: 'error' as const,
         suggestion: 'Ensure XML starts with <Import> and ends with </Import>',
       });
     }
@@ -64,7 +78,7 @@ export class ValidationService {
       errors.push({
         code: 'MISSING_TRANSACTION',
         message: 'XML must contain at least one <Transaction> element',
-        severity: 'error',
+        severity: 'error' as const,
         suggestion: 'Add <Transaction> elements inside <Import>',
       });
     }
@@ -76,7 +90,7 @@ export class ValidationService {
       errors.push({
         code: 'MALFORMED_XML',
         message: error.message,
-        severity: 'error',
+        severity: 'error' as const,
         suggestion: 'Check that all opening tags have matching closing tags',
       });
     }

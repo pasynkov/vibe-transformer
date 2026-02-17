@@ -173,11 +173,12 @@ curl http://localhost:3002/api/health
 
 ---
 
-### Iteration 1.5: Transformator Mock API - Validation Endpoint 🔄
+### Iteration 1.5: Transformator Mock API - Validation Endpoint ✅
 
-**Status**: `in_progress`
+**Status**: `done`
 **Started**: 2026-02-17
-**Duration**: 1 day
+**Completed**: 2026-02-17
+**Duration**: 1 day (actual: ~1.5 hours)
 **Goal**: Implement POST /api/v1/business-rules/validate with basic XML validation
 
 **Deliverables**:
@@ -221,18 +222,19 @@ curl -X POST http://localhost:3002/api/v1/business-rules/validate \
 
 ---
 
-### Iteration 1.6: Transformator Mock API - Error Generation Logic ⏳
+### Iteration 1.6: Transformator Mock API - Error Generation Logic 🔄
 
-**Status**: `pending`
+**Status**: `in_progress`
+**Started**: 2026-02-17
 **Duration**: 1.5 days
 **Goal**: Implement iteration-based error generation (attempt 1 → structural, attempt 2 → content, attempt 3 → success)
 
 **Deliverables**:
-- [ ] `validation/validators/xml-parser.validator.ts` - Parse XML
-- [ ] `validation/validators/duplicate-checker.validator.ts` - Check duplicates
-- [ ] `validation/validators/length-validator.ts` - Check RuleCode length
-- [ ] `validation/validators/character-validator.ts` - Check invalid chars
-- [ ] `validation/error-generator.ts` - Generate errors based on attempt
+- [x] `validation/validators/xml-parser.validator.ts` - Parse XML
+- [x] `validation/validators/duplicate-checker.validator.ts` - Check duplicates
+- [x] `validation/validators/length-validator.ts` - Check RuleCode length
+- [x] `validation/validators/character-validator.ts` - Check invalid chars
+- [x] `validation/error-generator.ts` - Generate errors based on attempt
 
 **Success Criteria**:
 ```bash
@@ -275,13 +277,13 @@ curl -X POST http://localhost:3002/api/v1/business-rules/validate \
 ```
 
 **Testing Checklist**:
-- [ ] Attempt 1 returns DUPLICATE_RULE_CODE error
-- [ ] Attempt 1 returns RULE_CODE_TOO_LONG error
-- [ ] Attempt 2 returns INVALID_CHARACTERS error
-- [ ] Attempt 2 returns SHORT_RULE_CODE warning
-- [ ] Attempt 3 returns valid: true
-- [ ] Error messages include suggestions
-- [ ] Line numbers are provided in errors
+- [x] Attempt 1 returns DUPLICATE_RULE_CODE error
+- [x] Attempt 1 returns RULE_CODE_TOO_LONG error
+- [x] Attempt 2 returns INVALID_CHARACTERS error
+- [x] Attempt 2 returns SHORT_RULE_CODE warning
+- [x] Attempt 3 returns valid: true
+- [x] Error messages include suggestions
+- [x] Line numbers are provided in errors
 
 **Blocked By**: Iteration 1.5
 
